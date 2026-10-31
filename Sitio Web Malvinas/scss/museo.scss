@@ -1,0 +1,61 @@
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+
+.encabezado-museo {
+  background-color: $azul-noche;
+  color: $blanco;
+  padding: 3.5rem 0;
+  text-align: center;
+
+  h1 {
+    font-family: $fuente-titulos;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+  }
+
+  p {
+    color: rgba($blanco, 0.75);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+}
+
+.seccion-museo {
+  padding: $espacio-seccion 0;
+}
+
+.galeria-museo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.item-museo {
+  background-color: $blanco;
+  border-radius: $radio-borde;
+  overflow: hidden;
+  @include sombra-tarjeta;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .contenido {
+    padding: 1.25rem;
+
+    h4 {
+      font-family: $fuente-titulos;
+      color: $azul-noche;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $gris-medio;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+  }
+}
